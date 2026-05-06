@@ -1,16 +1,33 @@
 <main class="page">
   <section class="hero">
-    <p class="eyebrow">Digital Workforce for Voice</p>
-    <h1>Scale customer support without scaling call center costs</h1>
-    <p class="subtitle">
-      Launch always-on AI voice agents that answer calls, resolve tickets, book appointments, and
-      hand off only high-value conversations to your team.
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#">Book a Live Demo</a>
-      <a class="btn btn-secondary" href="#">See ROI Calculator</a>
+    <img
+      src="/assets/hero-section.png"
+      alt=""
+      aria-hidden="true"
+      class="hero-image-layer"
+    />
+    <div class="hero-overlay-layer"></div>
+    <div class="hero-content-layer">
+      <p class="eyebrow">Digital Workforce for Voice</p>
+      <h1>Handle every inbound call without adding headcount.</h1>
+      <p class="subtitle">
+        Automate lead qualification, support calls, and follow-ups with an AI voice agent that works
+        24/7 and escalates only when needed.
+      </p>
+      <p class="hero-supporting-line">From conversation to structured data — in real time.</p>
+      <ul class="hero-list">
+        <li>Qualify every inbound lead instantly</li>
+        <li>Capture structured data from every call</li>
+        <li>Reduce missed calls and wait time</li>
+        <li>Escalate complex conversations to humans</li>
+      </ul>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#">See it in action</a>
+        <a class="btn btn-secondary" href="#roi-calculator">Calculate your savings</a>
+        <a class="btn btn-secondary" [href]="loginUrl" target="_blank" rel="noopener noreferrer">Login</a>
+      </div>
+      <p class="hero-proof">Built for teams managing high call volumes with strict service targets.</p>
     </div>
-    <p class="hero-proof">Trusted by fast-growing businesses across retail, healthcare, and logistics.</p>
   </section>
 
   <section class="metrics">
@@ -33,45 +50,148 @@
   </section>
 
   <section class="features">
-    <h3>Everything needed to replace repetitive call workflows</h3>
+    <h3>Operational control for high-volume inbound calls</h3>
     <div class="feature-grid">
       <article class="card">
-        <h4>Natural Voice Conversations</h4>
+        <h4>Guided Conversations</h4>
         <p>
-          Human-like multilingual conversations with context memory, interruption handling, and
-          intelligent clarifying questions.
+          Every call follows your business rules, ensuring consistent responses and compliance.
         </p>
       </article>
       <article class="card">
-        <h4>Smart Escalation</h4>
+        <h4>Real-time Call Intelligence</h4>
         <p>
-          Automatically routes sensitive or complex calls to your team with full transcript and
-          summary attached.
+          Transcripts, summaries, intent detection, and structured data captured automatically.
         </p>
       </article>
       <article class="card">
-        <h4>Business System Integrations</h4>
+        <h4>Built-in Escalation</h4>
         <p>
-          Connect CRM, scheduling, ticketing, and billing systems so the AI agent can complete
-          real actions, not just answer FAQs.
+          Complex or sensitive calls are instantly routed to your team.
         </p>
       </article>
       <article class="card">
-        <h4>Enterprise-grade Controls</h4>
+        <h4>Operations Dashboard</h4>
         <p>
-          Role-based access, audit logs, compliance-ready call storage, and analytics to track
-          quality and outcomes.
+          Track call volume, outcomes, drop-offs, and performance in one place.
         </p>
       </article>
     </div>
   </section>
 
-  <section class="cta">
-    <h3>Your next top-performing team member is digital</h3>
-    <p>
-      Start with one workflow in one week, then expand to sales, support, collections, and
-      outbound reminders at scale.
+  <section class="where-it-works">
+    <h3>Built for high-volume, repeatable calls</h3>
+    <div class="list-grid">
+      <ul class="card list-card">
+        <li>Lead qualification</li>
+        <li>Appointment booking &amp; reminders</li>
+        <li>Order status &amp; support queries</li>
+        <li>Payment reminders &amp; follow-ups</li>
+      </ul>
+      <ul class="card list-card">
+        <li>First-line customer support</li>
+        <li>Delivery confirmation calls</li>
+        <li>Feedback &amp; survey calls</li>
+        <li>Service scheduling</li>
+      </ul>
+    </div>
+    <p class="section-subtext">
+      Handles repetitive calls so your team can focus on what actually needs human judgment.
     </p>
-    <a class="btn btn-primary" href="#">Start Free Pilot</a>
+  </section>
+
+  <section class="roi-calculator" id="roi-calculator">
+    <div class="roi-header">
+      <h3>See how much you can save</h3>
+      <div class="currency-toggle" role="group" aria-label="Select calculator currency">
+        <button class="btn btn-secondary" [class.active]="selectedCurrency === 'INR'" type="button" (click)="setCurrency('INR')">
+          INR
+        </button>
+        <button class="btn btn-secondary" [class.active]="selectedCurrency === 'USD'" type="button" (click)="setCurrency('USD')">
+          USD
+        </button>
+      </div>
+    </div>
+    <div class="roi-layout">
+      <div class="card roi-inputs">
+        <label>
+          Monthly call volume
+          <input type="number" min="0" [(ngModel)]="monthlyCallVolume" />
+        </label>
+        <label>
+          Avg call duration (minutes)
+          <input type="number" min="0" step="0.5" [(ngModel)]="averageCallDuration" />
+        </label>
+        <label>
+          Cost per human agent ({{ selectedCurrency }} / month)
+          <input type="number" min="0" [(ngModel)]="costPerHumanAgent" />
+        </label>
+        <label>
+          Number of agents
+          <input type="number" min="0" [(ngModel)]="numberOfAgents" />
+        </label>
+        <label>
+          AI rate per minute ({{ selectedCurrency }})
+          <input type="number" [min]="aiRateMin" [max]="aiRateMax" [step]="aiRateStep" [(ngModel)]="aiRatePerMinute" />
+        </label>
+        <label>
+          % automation of repeatable calls
+          <input type="number" min="0" max="100" step="5" [(ngModel)]="automationPercentage" />
+        </label>
+      </div>
+      <div class="card roi-results">
+        <p><strong>Total monthly human cost:</strong> {{ formatCurrency(totalMonthlyHumanCost) }}</p>
+        <p><strong>Estimated AI cost:</strong> {{ formatCurrency(estimatedAiOnlyCost) }}</p>
+        <p><strong>Estimated monthly cost with AI:</strong> {{ formatCurrency(estimatedMonthlyCostWithAi) }}</p>
+        <p><strong>Estimated savings:</strong> {{ formatCurrency(estimatedSavings) }} ({{ savingsPercentage | number:'1.0-0' }}%)</p>
+        <p><strong>Payback period:</strong> {{ estimatedPaybackMonths | number:'1.1-1' }} months</p>
+        <p class="savings-callout">
+          Estimated monthly savings: {{ formatCurrency(estimatedSavings) }} (≈ {{ savingsPercentage | number:'1.0-0' }}%)
+        </p>
+        <p class="assumption">
+          Based on {{ automationPercentage | number:'1.0-0' }}% automation of repeatable calls.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="before-after">
+    <h3>From overloaded support to efficient operations</h3>
+    <div class="list-grid">
+      <article class="card list-card">
+        <h4>Before</h4>
+        <ul>
+          <li>Missed calls during peak hours</li>
+          <li>High cost per support interaction</li>
+          <li>Inconsistent answers across agents</li>
+          <li>Limited visibility into calls</li>
+        </ul>
+      </article>
+      <article class="card list-card">
+        <h4>After</h4>
+        <ul>
+          <li>24/7 instant response</li>
+          <li>Lower cost per call</li>
+          <li>Consistent, policy-driven responses</li>
+          <li>Full call analytics and insights</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="operations-trust">
+    <h3>Designed for real-world operations</h3>
+    <ul class="card list-card">
+      <li>Human fallback for complex calls</li>
+      <li>Full call logs, transcripts, and audit trails</li>
+      <li>Configurable scripts and workflows</li>
+      <li>Works with your existing CRM and tools</li>
+    </ul>
+  </section>
+
+  <section class="cta">
+    <h3>Start with a pilot</h3>
+    <p>Run a controlled rollout and measure impact before scaling.</p>
+    <a class="btn btn-primary" href="#">Start with a pilot</a>
   </section>
 </main>
