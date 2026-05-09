@@ -3,7 +3,7 @@
 help:
 	@echo "Available commands:"
 	@echo "  make install     - install dependencies"
-	@echo "  make run         - run local dev server (http://localhost:4200)"
+	@echo "  make run         - run local dev server (http://localhost:4201)"
 	@echo "  make build       - build app (default config)"
 	@echo "  make build-prod  - build optimized production bundle"
 	@echo "                    Optional: LOGIN_URL=https://your-login-url"

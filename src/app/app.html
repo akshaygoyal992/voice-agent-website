@@ -1,119 +1,229 @@
 <main class="page">
-  <section class="hero">
-    <img
-      src="/assets/hero-section.png"
-      alt=""
-      aria-hidden="true"
-      class="hero-image-layer"
-    />
-    <div class="hero-overlay-layer"></div>
-    <div class="hero-content-layer">
-      <p class="eyebrow">Digital Workforce for Voice</p>
-      <h1>Handle every inbound call without adding headcount.</h1>
-      <p class="subtitle">
-        Automate lead qualification, support calls, and follow-ups with an AI voice agent that works
-        24/7 and escalates only when needed.
-      </p>
-      <p class="hero-supporting-line">From conversation to structured data — in real time.</p>
-      <ul class="hero-list">
-        <li>Qualify every inbound lead instantly</li>
-        <li>Capture structured data from every call</li>
-        <li>Reduce missed calls and wait time</li>
-        <li>Escalate complex conversations to humans</li>
-      </ul>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#">See it in action</a>
-        <a class="btn btn-secondary" href="#roi-calculator">Calculate your savings</a>
-        <a class="btn btn-secondary" [href]="loginUrl" target="_blank" rel="noopener noreferrer">Login</a>
+  <header class="topbar">
+    <a class="brand" href="#">VoiceAgent</a>
+    <nav class="topnav" aria-label="Primary">
+      <a href="#features">Platform</a>
+      <a href="#use-cases">Use cases</a>
+      <a href="#roi-calculator">ROI</a>
+      <a href="#trust">Operations</a>
+    </nav>
+    <div class="topbar-actions">
+      <a class="btn btn-secondary topbar-login" [href]="loginUrl" target="_blank" rel="noopener noreferrer">Login</a>
+      <a
+        class="btn btn-primary topbar-cta"
+        href="https://calendly.com/yellowhello392/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Request a demo
+      </a>
+    </div>
+  </header>
+
+  <section class="hero" aria-label="Hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Voice Infrastructure</p>
+        <h1>Handle every inbound call. Without adding headcount.</h1>
+        <p class="subtitle">
+          Automate lead qualification, support calls, and follow-ups with an AI voice agent that works
+          24/7 and escalates only when needed.
+        </p>
+        <p class="hero-supporting-line">From conversation to structured data in real time.</p>
+        <ul class="hero-list">
+          <li>Qualify every inbound lead instantly</li>
+          <li>Capture structured data from every call</li>
+          <li>Reduce missed calls and wait time</li>
+          <li>Escalate complex conversations to humans</li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#">See it in action</a>
+          <a class="btn btn-secondary" href="#roi-calculator">Calculate your savings</a>
+          <a class="btn btn-secondary" [href]="loginUrl" target="_blank" rel="noopener noreferrer">Login</a>
+        </div>
+        <p class="hero-proof">Built for teams managing high call volumes with strict service targets.</p>
       </div>
-      <p class="hero-proof">Built for teams managing high call volumes with strict service targets.</p>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual__halo"></div>
+        <div class="hero-visual__frame">
+          <img src="/assets/hero-section.png" alt="" class="hero-visual__image" />
+          <div class="hero-visual__floating hero-visual__floating--top">
+            <span class="hero-visual__label">Live call</span>
+            <strong>Intent detected</strong>
+            <small>CRM updated in real time</small>
+          </div>
+          <div class="hero-visual__floating hero-visual__floating--bottom">
+            <span class="hero-visual__metric">450 ms</span>
+            <small>Average response latency</small>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="metrics">
+  <section class="metrics" aria-label="Key metrics">
     <article>
+      <span class="metric-accent" aria-hidden="true">◌</span>
       <h2>70%</h2>
       <p>Lower support cost per call</p>
     </article>
     <article>
+      <span class="metric-accent" aria-hidden="true">◔</span>
       <h2>24/7</h2>
       <p>Instant response at any hour</p>
     </article>
     <article>
+      <span class="metric-accent" aria-hidden="true">↗</span>
       <h2>3x</h2>
       <p>More calls handled per day</p>
     </article>
     <article>
+      <span class="metric-accent" aria-hidden="true">✦</span>
       <h2>98%</h2>
       <p>Intent detection accuracy</p>
     </article>
   </section>
 
-  <section class="features">
-    <h3>Operational control for high-volume inbound calls</h3>
-    <div class="feature-grid">
-      <article class="card">
-        <h4>Guided Conversations</h4>
-        <p>
-          Every call follows your business rules, ensuring consistent responses and compliance.
-        </p>
+  <section class="how-it-works">
+    <div class="section-kicker">How it works</div>
+    <div class="section-head">
+      <h3>From silence to speech in minutes</h3>
+      <p>Spin up a call-ready voice assistant simply, then customize and scale however you like.</p>
+    </div>
+    <div class="workflow-grid">
+      <article class="workflow-card workflow-card--warm">
+        <span class="workflow-card__icon">01</span>
+        <h4>Give your agent context</h4>
+        <p>Provide instructions and tools, and configure as if you were building it yourself.</p>
       </article>
-      <article class="card">
-        <h4>Real-time Call Intelligence</h4>
-        <p>
-          Transcripts, summaries, intent detection, and structured data captured automatically.
-        </p>
+      <article class="workflow-card workflow-card--cool">
+        <span class="workflow-card__icon">02</span>
+        <h4>Pick your models</h4>
+        <p>Choose from 200+ built-in integrations or connect your own model.</p>
       </article>
-      <article class="card">
-        <h4>Built-in Escalation</h4>
-        <p>
-          Complex or sensitive calls are instantly routed to your team.
-        </p>
+      <article class="workflow-card workflow-card--leaf">
+        <span class="workflow-card__icon">03</span>
+        <h4>Integrate your business data</h4>
+        <p>Integrate your authenticated internal API services to fetch data and perform actions.</p>
       </article>
-      <article class="card">
-        <h4>Operations Dashboard</h4>
-        <p>
-          Track call volume, outcomes, drop-offs, and performance in one place.
-        </p>
+      <article class="workflow-card workflow-card--rose">
+        <span class="workflow-card__icon">04</span>
+        <h4>Tune and observe in production</h4>
+        <p>Catch hallucinations before they go live with evals and observability stack support.</p>
       </article>
     </div>
   </section>
 
-  <section class="where-it-works">
-    <h3>Built for high-volume, repeatable calls</h3>
-    <div class="list-grid">
-      <ul class="card list-card">
-        <li>Lead qualification</li>
-        <li>Appointment booking &amp; reminders</li>
-        <li>Order status &amp; support queries</li>
-        <li>Payment reminders &amp; follow-ups</li>
-      </ul>
-      <ul class="card list-card">
-        <li>First-line customer support</li>
-        <li>Delivery confirmation calls</li>
-        <li>Feedback &amp; survey calls</li>
-        <li>Service scheduling</li>
-      </ul>
+  <section class="visual-band visual-band--dark">
+    <div class="section-kicker">Features</div>
+    <div class="section-head section-head--split">
+      <h3>Built for developers, ready for business</h3>
+      <p>Build voice agents with the flexibility and customizability of raw code, without having to build the entire voice stack from scratch.</p>
     </div>
-    <p class="section-subtext">
-      Handles repetitive calls so your team can focus on what actually needs human judgment.
-    </p>
-  </section>
-
-  <section class="roi-calculator" id="roi-calculator">
-    <div class="roi-header">
-      <h3>See how much you can save</h3>
-      <div class="currency-toggle" role="group" aria-label="Select calculator currency">
-        <button class="btn btn-secondary" [class.active]="selectedCurrency === 'INR'" type="button" (click)="setCurrency('INR')">
-          INR
-        </button>
-        <button class="btn btn-secondary" [class.active]="selectedCurrency === 'USD'" type="button" (click)="setCurrency('USD')">
-          USD
-        </button>
+    <div class="feature-layout">
+      <div class="feature-grid">
+        <article class="card feature-card">
+          <div class="feature-card__icon" aria-hidden="true">◎</div>
+          <h4>Guided Conversations</h4>
+          <p>Every call follows your business rules, ensuring consistent responses and compliance.</p>
+        </article>
+        <article class="card feature-card">
+          <div class="feature-card__icon" aria-hidden="true">◌</div>
+          <h4>Real-time Call Intelligence</h4>
+          <p>Transcripts, summaries, intent detection, and structured data captured automatically.</p>
+        </article>
+        <article class="card feature-card">
+          <div class="feature-card__icon" aria-hidden="true">⇄</div>
+          <h4>Built-in Escalation</h4>
+          <p>Complex or sensitive calls are instantly routed to your team.</p>
+        </article>
+        <article class="card feature-card">
+          <div class="feature-card__icon" aria-hidden="true">▣</div>
+          <h4>Operations Dashboard</h4>
+          <p>Track call volume, outcomes, drop-offs, and performance in one place.</p>
+        </article>
       </div>
+      <aside class="feature-showcase card" aria-hidden="true">
+        <div class="feature-showcase__tabs">
+          <span class="is-active">Voice</span>
+          <span>Tools</span>
+          <span>Model</span>
+          <span>Analysis</span>
+        </div>
+        <div class="feature-showcase__panel">
+          <div class="feature-showcase__eyebrow">Live call stack</div>
+          <div class="feature-showcase__row">
+            <div>
+              <strong>Latency</strong>
+              <p>450 ms response window</p>
+            </div>
+            <span class="feature-showcase__metric">99.9%</span>
+          </div>
+          <div class="feature-showcase__chart">
+            <span class="chart chart--orange"></span>
+            <span class="chart chart--yellow"></span>
+            <span class="chart chart--blue"></span>
+            <span class="chart chart--purple"></span>
+            <span class="chart chart--green"></span>
+          </div>
+          <div class="feature-showcase__footer">
+            <span>Call transcript</span>
+            <span>CRM synced</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="visual-band visual-band--light" id="use-cases">
+    <div class="section-kicker">Use cases</div>
+    <div class="section-head">
+      <h3>Built for high-volume, repeatable calls</h3>
+      <p>Handles repetitive calls so your team can focus on what actually needs human judgment.</p>
+    </div>
+    <div class="use-case-layout">
+      <article class="use-case-panel">
+        <h4>Frontline automations</h4>
+        <ul>
+          <li><span>Lead qualification</span></li>
+          <li><span>Appointment booking &amp; reminders</span></li>
+          <li><span>Order status &amp; support queries</span></li>
+          <li><span>Payment reminders &amp; follow-ups</span></li>
+        </ul>
+      </article>
+      <article class="use-case-panel">
+        <h4>Operations coverage</h4>
+        <ul>
+          <li><span>First-line customer support</span></li>
+          <li><span>Delivery confirmation calls</span></li>
+          <li><span>Feedback &amp; survey calls</span></li>
+          <li><span>Service scheduling</span></li>
+        </ul>
+      </article>
+      <div class="use-case-visual">
+        <div class="use-case-visual__grid"></div>
+        <div class="use-case-visual__halo"></div>
+        <div class="use-case-visual__headline">From silence to speech in minutes</div>
+        <div class="use-case-visual__flow use-case-visual__flow--one">Give context</div>
+        <div class="use-case-visual__flow use-case-visual__flow--two">Pick models</div>
+        <div class="use-case-visual__flow use-case-visual__flow--three">Connect data</div>
+        <div class="use-case-visual__flow use-case-visual__flow--four">Observe live</div>
+        <div class="use-case-visual__card use-case-visual__card--top">Lead qualification</div>
+        <div class="use-case-visual__card use-case-visual__card--right">Booking</div>
+        <div class="use-case-visual__card use-case-visual__card--bottom">Support</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visual-band visual-band--dark" id="roi-calculator">
+    <div class="section-kicker">ROI calculator</div>
+    <div class="section-head section-head--split">
+      <h3>See how much you can save</h3>
+      <p>Estimate the impact of automating repeatable calls with a live calculator.</p>
     </div>
     <div class="roi-layout">
       <div class="card roi-inputs">
+        <p class="roi-panel-label">Control panel</p>
         <label>
           Monthly call volume
           <input type="number" min="0" [(ngModel)]="monthlyCallVolume" />
@@ -140,6 +250,12 @@
         </label>
       </div>
       <div class="card roi-results">
+        <p class="roi-panel-label">Live result summary</p>
+        <div class="roi-results__hero">
+          <span>Estimated monthly savings</span>
+          <strong>{{ formatCurrency(estimatedSavings) }}</strong>
+          <small>About {{ savingsPercentage | number:'1.0-0' }}% lower monthly operating cost</small>
+        </div>
         <p><strong>Total monthly human cost:</strong> {{ formatCurrency(totalMonthlyHumanCost) }}</p>
         <p><strong>Estimated AI cost:</strong> {{ formatCurrency(estimatedAiOnlyCost) }}</p>
         <p><strong>Estimated monthly cost with AI:</strong> {{ formatCurrency(estimatedMonthlyCostWithAi) }}</p>
@@ -155,43 +271,90 @@
     </div>
   </section>
 
-  <section class="before-after">
-    <h3>From overloaded support to efficient operations</h3>
-    <div class="list-grid">
-      <article class="card list-card">
-        <h4>Before</h4>
+  <section class="comparison-band" id="comparison">
+    <div class="section-kicker">Comparison</div>
+    <div class="section-head section-head--split">
+      <h3>From overloaded support to efficient operations</h3>
+      <p>Clear before-and-after contrast for teams that need a system that feels obvious.</p>
+    </div>
+    <div class="comparison-summary" aria-hidden="true">
+      <span>Missed calls down</span>
+      <span>Faster response times</span>
+      <span>Cleaner handoffs</span>
+    </div>
+    <div class="comparison-grid">
+      <article class="comparison-card comparison-card--before">
+        <div class="comparison-card__label">Before</div>
         <ul>
-          <li>Missed calls during peak hours</li>
-          <li>High cost per support interaction</li>
-          <li>Inconsistent answers across agents</li>
-          <li>Limited visibility into calls</li>
+          <li><span class="comparison-icon" aria-hidden="true">−</span><span>Missed calls during peak hours</span></li>
+          <li><span class="comparison-icon" aria-hidden="true">−</span><span>High cost per support interaction</span></li>
+          <li><span class="comparison-icon" aria-hidden="true">−</span><span>Inconsistent answers across agents</span></li>
+          <li><span class="comparison-icon" aria-hidden="true">−</span><span>Limited visibility into calls</span></li>
         </ul>
       </article>
-      <article class="card list-card">
-        <h4>After</h4>
+      <div class="comparison-arrow" aria-hidden="true">→</div>
+      <article class="comparison-card comparison-card--after">
+        <div class="comparison-card__label">After</div>
         <ul>
-          <li>24/7 instant response</li>
-          <li>Lower cost per call</li>
-          <li>Consistent, policy-driven responses</li>
-          <li>Full call analytics and insights</li>
+          <li><span class="comparison-icon" aria-hidden="true">+</span><span>24/7 instant response</span></li>
+          <li><span class="comparison-icon" aria-hidden="true">+</span><span>Lower cost per call</span></li>
+          <li><span class="comparison-icon" aria-hidden="true">+</span><span>Consistent, policy-driven responses</span></li>
+          <li><span class="comparison-icon" aria-hidden="true">+</span><span>Full call analytics and insights</span></li>
         </ul>
       </article>
     </div>
   </section>
 
-  <section class="operations-trust">
-    <h3>Designed for real-world operations</h3>
-    <ul class="card list-card">
-      <li>Human fallback for complex calls</li>
-      <li>Full call logs, transcripts, and audit trails</li>
-      <li>Configurable scripts and workflows</li>
-      <li>Works with your existing CRM and tools</li>
-    </ul>
+  <section class="trust-band" id="trust">
+    <div class="section-kicker">Trust</div>
+    <div class="section-head">
+      <h3>Designed for real-world operations</h3>
+      <p>Enterprise-ready guardrails without visual clutter.</p>
+    </div>
+    <div class="trust-badges" aria-hidden="true">
+      <span>Human fallback</span>
+      <span>Audit trail</span>
+      <span>CRM ready</span>
+      <span>Configurable workflows</span>
+    </div>
+    <div class="trust-layout">
+      <ul class="card trust-panel">
+        <li><span class="trust-icon" aria-hidden="true">◍</span><span>Human fallback for complex calls</span></li>
+        <li><span class="trust-icon" aria-hidden="true">◍</span><span>Full call logs, transcripts, and audit trails</span></li>
+        <li><span class="trust-icon" aria-hidden="true">◍</span><span>Configurable scripts and workflows</span></li>
+        <li><span class="trust-icon" aria-hidden="true">◍</span><span>Works with your existing CRM and tools</span></li>
+      </ul>
+      <aside class="trust-console card" aria-hidden="true">
+        <div class="trust-console__top">
+          <span class="trust-console__dot"></span>
+          <strong>Operations</strong>
+          <span>24/7 uptime</span>
+        </div>
+        <div class="trust-console__chart">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="trust-console__grid">
+          <div>
+            <strong>CRM ready</strong>
+            <p>Every call can leave a structured trail.</p>
+          </div>
+          <div>
+            <strong>Audit trail</strong>
+            <p>Transcripts, outcomes, and escalation logs.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
   </section>
 
-  <section class="cta">
+  <section class="cta" id="cta">
+    <div class="section-kicker">Get started</div>
     <h3>Start with a pilot</h3>
     <p>Run a controlled rollout and measure impact before scaling.</p>
-    <a class="btn btn-primary" href="#">Start with a pilot</a>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="#">Start with a pilot</a>
+      <a class="btn btn-secondary" [href]="loginUrl" target="_blank" rel="noopener noreferrer">Login</a>
+    </div>
   </section>
 </main>
